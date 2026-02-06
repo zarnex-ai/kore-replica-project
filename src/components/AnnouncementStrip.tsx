@@ -1,0 +1,65 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const announcements = [
+  {
+    logo: "Gartner",
+    text: "Kore.ai named a leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms, 2025",
+    link: "#",
+  },
+  {
+    logo: "Forrester",
+    text: "Kore.ai named a leader in The Forrester Wave™ for Cognitive Search Platforms, 2025",
+    link: "#",
+  },
+  {
+    logo: "Everest",
+    text: "Kore.ai named a leader in Everest Group's Conversational AI & AI Agents PEAK Matrix® 2025",
+    link: "#",
+  },
+];
+
+export const AnnouncementStrip = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % announcements.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="bg-kore-light-bg border-b border-border/50 py-3 mt-16 lg:mt-20">
+      <div className="container-kore">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center justify-center gap-4 flex-wrap"
+          >
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              {announcements[currentIndex].logo}
+            </span>
+            <span className="text-sm text-foreground max-w-xl text-center">
+              {announcements[currentIndex].text}
+            </span>
+            <a
+              href={announcements[currentIndex].link}
+              className="btn-kore-ghost text-sm"
+            >
+              Access Report
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+export default AnnouncementStrip;

@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import KoreHeader from "@/components/KoreHeader";
+import AnnouncementStrip from "@/components/AnnouncementStrip";
+import HeroSection from "@/components/HeroSection";
+import TrustedBySection from "@/components/TrustedBySection";
+import EcosystemSection from "@/components/EcosystemSection";
+import DifferentiatorsSection from "@/components/DifferentiatorsSection";
+import AwardsSection from "@/components/AwardsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import PartnersSection from "@/components/PartnersSection";
+import InsightsSection from "@/components/InsightsSection";
+import KoreFooter from "@/components/KoreFooter";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <KoreHeader />
+      <AnnouncementStrip />
+      <main>
+        <HeroSection />
+        <TrustedBySection />
+        <EcosystemSection />
+        <DifferentiatorsSection />
+        <AwardsSection />
+        <TestimonialsSection />
+        <PartnersSection />
+        <InsightsSection />
+      </main>
+      <KoreFooter />
     </div>
   );
 };
