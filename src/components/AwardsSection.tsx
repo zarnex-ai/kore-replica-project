@@ -6,29 +6,33 @@ const awards = [
   {
     id: "forrester",
     label: "Cognitive Search Platforms",
-    title: "Kore.ai named a leader in the Forrester Wave™: Cognitive Search Platforms, 2025",
-    description: "In its evaluation of 14 vendors on 21 criteria, Forrester recognized Kore.ai as a leader in the Forrester Wave™: Cognitive Search Platforms 2025 report.",
+    title: "Zarnex.ai named a leader in the Forrester Wave™: Cognitive Search Platforms, 2025",
+    description:
+      "In its evaluation of 14 vendors on 21 criteria, Forrester recognized Zarnex.ai as a leader in the Forrester Wave™: Cognitive Search Platforms 2025 report.",
     link: "#",
   },
   {
     id: "gartner",
     label: "Conversational AI Platforms",
-    title: "Kore.ai named a leader in Gartner® Magic Quadrant™",
-    description: "The Gartner® Magic Quadrant™ for Conversational AI Platforms now includes conversational AI agents and tools increasingly leveraging generative AI.",
+    title: "Zarnex.ai named a leader in Gartner® Magic Quadrant™",
+    description:
+      "The Gartner® Magic Quadrant™ for Conversational AI Platforms now includes conversational AI agents and tools increasingly leveraging generative AI.",
     link: "#",
   },
   {
     id: "genai-apps",
     label: "Generative AI Applications",
     title: "Gartner® Emerging Market Quadrant leader for GenAI applications",
-    description: "The Gartner® EMQ for Generative AI Productivity and AI Knowledge Management Apps report covers applications that use AI agents to accelerate workflows.",
+    description:
+      "The Gartner® EMQ for Generative AI Productivity and AI Knowledge Management Apps report covers applications that use AI agents to accelerate workflows.",
     link: "#",
   },
   {
     id: "genai-eng",
     label: "Generative AI Engineering",
     title: "Gartner® Emerging Market Quadrant leader for GenAI engineering",
-    description: "The Gartner® eMQ for Generative AI Engineering report covers the complete agentic application lifecycle across multiple agents.",
+    description:
+      "The Gartner® eMQ for Generative AI Engineering report covers the complete agentic application lifecycle across multiple agents.",
     link: "#",
   },
 ];
@@ -46,7 +50,9 @@ export const AwardsSection = () => {
             <button
               key={award.id}
               onClick={() => setActiveTab(award.id)}
-              className={`tab-kore ${activeTab === award.id ? "tab-kore-active" : ""}`}
+              className={`tab-kore ${
+                activeTab === award.id ? "tab-kore-active" : ""
+              }`}
             >
               {award.label}
             </button>
@@ -71,7 +77,9 @@ export const AwardsSection = () => {
           </div>
           <div className="flex items-center justify-center">
             <div className="w-full max-w-md h-64 bg-gradient-to-br from-muted to-background rounded-2xl flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Award Chart Placeholder</span>
+              <span className="text-muted-foreground text-sm">
+                Award Chart Placeholder
+              </span>
             </div>
           </div>
         </motion.div>

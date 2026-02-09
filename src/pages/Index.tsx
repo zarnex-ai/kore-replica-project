@@ -1,4 +1,4 @@
-import KoreHeader from "@/components/KoreHeader";
+import ZarnexHeader from "@/components/ZarnexHeader";
 import AnnouncementStrip from "@/components/AnnouncementStrip";
 import HeroSection from "@/components/HeroSection";
 import TrustedBySection from "@/components/TrustedBySection";
@@ -8,12 +8,12 @@ import AwardsSection from "@/components/AwardsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "@/components/PartnersSection";
 import InsightsSection from "@/components/InsightsSection";
-import KoreFooter from "@/components/KoreFooter";
+import ZarnexFooter from "@/components/ZarnexFooter";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <KoreHeader />
+      <ZarnexHeader />
       <AnnouncementStrip />
       <main>
         <HeroSection />
@@ -25,7 +25,7 @@ const Index = () => {
         <PartnersSection />
         <InsightsSection />
       </main>
-      <KoreFooter />
+      <ZarnexFooter />
     </div>
   );
 };

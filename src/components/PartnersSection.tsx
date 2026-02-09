@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const partners = [
   {
     name: "AWS",
-    description: "The Kore.ai Agent Platform and AI solutions are integrated with AWS services including Amazon Bedrock, Amazon Q and Amazon Connect to accelerate the deployment of AWS AI tools across business use cases.",
+    description: "The Zarnex Agent Platform and AI solutions are integrated with AWS services including Amazon Bedrock, Amazon Q and Amazon Connect to accelerate the deployment of AWS AI tools across business use cases.",
     color: "from-orange-500/10 to-yellow-500/10",
     links: [
       { label: "Read more", href: "#" },
@@ -13,7 +13,7 @@ const partners = [
   },
   {
     name: "Microsoft",
-    description: "Deploy the Kore.ai Agent Platform and AI solutions within Microsoft environments including Azure AI Foundry, Microsoft Teams, Microsoft 365 Copilot, and Microsoft Copilot Studio.",
+    description: "Deploy the Zarnex Agent Platform and AI solutions within Microsoft environments including Azure AI Foundry, Microsoft Teams, Microsoft 365 Copilot, and Microsoft Copilot Studio.",
     color: "from-blue-500/10 to-cyan-500/10",
     links: [
       { label: "Read more", href: "#" },

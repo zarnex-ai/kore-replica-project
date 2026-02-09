@@ -5,17 +5,17 @@ import { ArrowRight } from "lucide-react";
 const announcements = [
   {
     logo: "Gartner",
-    text: "Kore.ai named a leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms, 2025",
+    text: "Zarnex.ai named a leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms, 2025",
     link: "#",
   },
   {
     logo: "Forrester",
-    text: "Kore.ai named a leader in The Forrester Wave™ for Cognitive Search Platforms, 2025",
+    text: "Zarnex.ai named a leader in The Forrester Wave™ for Cognitive Search Platforms, 2025",
     link: "#",
   },
   {
     logo: "Everest",
-    text: "Kore.ai named a leader in Everest Group's Conversational AI & AI Agents PEAK Matrix® 2025",
+    text: "Zarnex.ai named a leader in Everest Group's Conversational AI & AI Agents PEAK Matrix® 2025",
     link: "#",
   },
 ];

@@ -76,7 +76,7 @@ export const TrustedBySection = () => {
             transition={{ delay: 0.2 }}
             className="text-body mb-8"
           >
-            Discover why hundreds of enterprises use Kore.ai.
+            Discover why hundreds of enterprises use Zarnex.
           </motion.p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#" className="btn-kore-primary">

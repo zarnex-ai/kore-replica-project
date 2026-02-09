@@ -21,7 +21,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-body max-w-2xl mx-auto mb-10"
           >
-            Accelerate the speed of business with the Kore.ai Platform and our AI solutions for work, service, and process.
+            Accelerate the speed of business with the Zarnex.ai Platform and our AI solutions for work, service, and process.
           </motion.p>
           
           <motion.div

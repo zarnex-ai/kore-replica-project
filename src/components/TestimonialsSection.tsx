@@ -11,13 +11,13 @@ const testimonials = [
   },
   {
     company: "Pfizer",
-    quote: "Since we started with Kore.ai, we've deployed 60 AI agents across the enterprise—covering research, development, medical, commercial, and manufacturing across global markets and multiple languages.",
+    quote: "Since we started with Zarnex, we've deployed 60 AI agents across the enterprise—covering research, development, medical, commercial, and manufacturing across global markets and multiple languages.",
     author: "Vik Kapoor",
     title: "Head of GenAI Platforms & Products",
   },
   {
     company: "Microsoft",
-    quote: "Our strategic partnership with Kore.ai marks a significant milestone in our mission to accelerate enterprise AI transformation.",
+    quote: "Our strategic partnership with Zarnex marks a significant milestone in our mission to accelerate enterprise AI transformation.",
     author: "Puneet Chandok",
     title: "President, India and South Asia",
   },
@@ -65,7 +65,7 @@ export const TestimonialsSection = () => {
             transition={{ delay: 0.1 }}
             className="text-body"
           >
-            Discover how organizations deliver AI value with Kore.ai.
+            Discover how organizations deliver AI value with Zarnex.
           </motion.p>
         </div>
 

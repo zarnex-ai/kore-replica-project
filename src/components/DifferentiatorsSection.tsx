@@ -42,7 +42,7 @@ export const DifferentiatorsSection = () => {
               viewport={{ once: true }}
               className="heading-section mb-8"
             >
-              What sets Kore.ai apart
+              What sets Zarnex.ai apart
             </motion.h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
