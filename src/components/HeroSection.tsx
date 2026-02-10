@@ -3,7 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="section-kore wave-bg pt-12 lg:pt-20">
+    <section className="section-kore pt-12 lg:pt-20 relative" style={{ backgroundColor: '#fcfaff' }}>
+      <div className="liquid-background">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
+      </div>
       <div className="container-kore">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1

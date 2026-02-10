@@ -10,9 +10,10 @@ const announcements = [
     link: "#",
   },
   {
-    logo: "Arviona Labs",
+    logo: "/arviona-labs-logo.png", // Logo image with background removed
     text: "Zarnex.ai named a Technical Partners  in Arviona Labs's Personalized Academic ML Models & AI Agents Zarnex.ai® 2026",
-    link: "#",
+    link: "https://arvionalabs.com",
+    isImage: true,
   },
 ];
 
@@ -38,9 +39,17 @@ export const AnnouncementStrip = () => {
             transition={{ duration: 0.3 }}
             className="flex items-center justify-center gap-4 flex-wrap"
           >
-            <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              {announcements[currentIndex].logo}
-            </span>
+            {announcements[currentIndex].isImage ? (
+              <img
+                src={announcements[currentIndex].logo}
+                alt="Arviona Labs Logo"
+                className="h-12 w-15"
+              />
+            ) : (
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {announcements[currentIndex].logo}
+              </span>
+            )}
             <span className="text-sm text-foreground max-w-xl text-center">
               {announcements[currentIndex].text}
             </span>

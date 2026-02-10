@@ -14,7 +14,7 @@ const partners = [
   {
     name: "Microsoft",
     description: "Deploy the Zarnex Agent Platform and AI solutions within Microsoft environments including Azure AI Foundry, Microsoft Teams, Microsoft 365 Copilot, and Microsoft Copilot Studio.",
-    color: "from-blue-500/10 to-cyan-500/10",
+    color: "from-purple-500/10 to-fuchsia-500/10",
     links: [
       { label: "Read more", href: "#" },
       { label: "Azure Marketplace", href: "#" },

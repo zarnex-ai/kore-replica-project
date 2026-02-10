@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liquid Purple Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fcfaff; /* Very faint purple tint for background */
+            font-family: sans-serif;
+        }
+
+        /* The container for the background effect */
+        .liquid-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        /* Shared style for the ripples */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px); /* This creates the soft 'liquid' look */
+            opacity: 0.6;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        /* Blob 1: The Main Requested Color */
+        .blob-1 {
+            background: rgb(189, 95, 189);
+            width: 600px;
+            height: 600px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.25; /* Lower opacity for subtle background feel */
+            animation-duration: 12s;
+        }
+
+        /* Blob 2: A lighter variant for depth */
+        .blob-2 {
+            background: rgba(189, 95, 189, 0.6);
+            width: 500px;
+            height: 500px;
+            top: 20%;
+            left: 30%;
+            animation-duration: 15s;
+            animation-delay: -2s;
+        }
+
+        /* Blob 3: A secondary movement */
+        .blob-3 {
+            background: rgb(210, 150, 210); /* Slightly lighter for contrast */
+            width: 400px;
+            height: 400px;
+            bottom: 10%;
+            right: 20%;
+            animation-duration: 18s;
+            animation-delay: -5s;
+        }
+
+        /* The Animation Movement */
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* Dummy Text Content to show overlay */
+        .content {
+            text-align: center;
+            color: #1a1a1a;
+            z-index: 1;
+        }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        p { color: #555; font-size: 1.2rem; }
+        
+    </style>
+</head>
+<body>
+
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+
+    
+
+</body>
+</html>
