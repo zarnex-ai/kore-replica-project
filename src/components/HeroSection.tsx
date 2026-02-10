@@ -6,15 +6,18 @@ export const HeroSection = () => {
     <section className="section-kore wave-bg pt-12 lg:pt-20">
       <div className="container-kore">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Animated Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="heading-hero text-foreground mb-6"
           >
-            Reimagine the enterprise with AI
+            Developers at{" "}
+            <span className="text-lilac-600">Flows</span>.
           </motion.h1>
-          
+
+          {/* Animated Paragraph */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -23,7 +26,8 @@ export const HeroSection = () => {
           >
             Accelerate the speed of business with the Zarnex.ai Platform and our AI solutions for work, service, and process.
           </motion.p>
-          
+
+          {/* Call-to-Action Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,20 +50,23 @@ export const HeroSection = () => {
           {[
             {
               title: "AI for Work",
-              description: "Search across silos, automate workflows, orchestrate AI agents and govern with confidence enterprise-wide.",
+              description:
+                "Search across silos, automate workflows, orchestrate AI agents and govern with confidence enterprise-wide.",
               link: "#",
             },
             {
               title: "AI for Service",
-              description: "Leverage generative AI innovation to empower customers and create differentiated service experiences.",
+              description:
+                "Leverage generative AI innovation to empower customers and create differentiated service experiences.",
               link: "#",
             },
             {
               title: "AI for Process",
-              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
+              description:
+                "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
               link: "#",
             },
-          ].map((card, index) => (
+          ].map((card) => (
             <a
               key={card.title}
               href={card.link}
