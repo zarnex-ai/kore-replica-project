@@ -6,7 +6,6 @@ import EcosystemSection from "@/components/EcosystemSection";
 import DifferentiatorsSection from "@/components/DifferentiatorsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "@/components/PartnersSection";
-import InsightsSection from "@/components/InsightsSection";
 import ZarnexFooter from "@/components/ZarnexFooter";
 
 const Index = () => {
@@ -21,7 +20,6 @@ const Index = () => {
         <DifferentiatorsSection />
         <TestimonialsSection />
         <PartnersSection />
-        <InsightsSection />
       </main>
       <ZarnexFooter />
     </div>
