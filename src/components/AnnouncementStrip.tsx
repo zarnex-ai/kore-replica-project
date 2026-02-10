@@ -3,19 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const announcements = [
+  
   {
-    logo: "Gartner",
-    text: "Zarnex.ai named a leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms, 2025",
+    logo: "DR.MGR College of Engineering",
+    text: "Zarnex.ai named a leader in College Final Year Projects ™ for Cognitive Search Platforms, 2025",
     link: "#",
   },
   {
-    logo: "Forrester",
-    text: "Zarnex.ai named a leader in The Forrester Wave™ for Cognitive Search Platforms, 2025",
-    link: "#",
-  },
-  {
-    logo: "Everest",
-    text: "Zarnex.ai named a leader in Everest Group's Conversational AI & AI Agents PEAK Matrix® 2025",
+    logo: "Arviona Labs",
+    text: "Zarnex.ai named a Technical Partners  in Arviona Labs's Personalized Academic ML Models & AI Agents Zarnex.ai® 2026",
     link: "#",
   },
 ];
