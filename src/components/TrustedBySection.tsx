@@ -10,14 +10,7 @@ const industries = [
     title: "Banks, Credit Unions, Financial Institutions",
     subtitle: "Trusted by banking leaders:",
   },
-  {
-    id: "healthcare",
-    label: "Healthcare",
-    logos: ["Johnson & Johnson", "Pfizer", "Roche", "Florida Blue", "United Health", "Lilly"],
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop",
-    title: "Payers, Providers, Life Sciences",
-    subtitle: "Trusted by healthcare leaders:",
-  },
+
   {
     id: "telecom",
     label: "Telecom + Media",
@@ -58,7 +51,7 @@ export const TrustedBySection = () => {
             viewport={{ once: true }}
             className="heading-section mb-4"
           >
-            We've built our business by serving global enterprises
+            We've built services for world class business !
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +60,7 @@ export const TrustedBySection = () => {
             transition={{ delay: 0.1 }}
             className="text-body"
           >
-            Trust us, we've learned from the best.
+            Trust us, Our Developers never disappoint you.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +69,7 @@ export const TrustedBySection = () => {
             transition={{ delay: 0.2 }}
             className="text-body mb-8"
           >
-            Discover why hundreds of enterprises use Zarnex.
+            Discover why enterprises enters Zarnex.ai
           </motion.p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#" className="btn-kore-primary">
