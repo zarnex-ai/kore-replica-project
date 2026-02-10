@@ -12,7 +12,7 @@ const partners = [
     ],
   },
   {
-    name: "Microsoft",
+    name: "sidanex",
     description: "Deploy the Zarnex Agent Platform and AI solutions within Microsoft environments including Azure AI Foundry, Microsoft Teams, Microsoft 365 Copilot, and Microsoft Copilot Studio.",
     color: "from-purple-500/10 to-fuchsia-500/10",
     links: [
@@ -33,7 +33,7 @@ export const PartnersSection = () => {
             viewport={{ once: true }}
             className="heading-card mb-4"
           >
-            Strategic partners: Microsoft and AWS
+            Strategic partners: sidanex and AWS
           </motion.h3>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

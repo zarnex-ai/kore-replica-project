@@ -60,16 +60,16 @@ export const EcosystemSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
             {
-              title: "Roadblocks to Every Turn",
-              description: "Rising customer expectations, frequent bad experiences, and overwhelmed agents create constant service bottlenecks.",
+              title: "Customer Care Automation",
+              description: "Transform your customer experience with human-like AI agents that work 24/7 across phone, chat, and messaging platforms.",
             },
             {
-              title: "A Smarter way to Help",
-              description: "Autonomous AI-powered agents provide AI-driven support for human agents and enable continuous service improvement.",
+              title: "AI Workforce Management",
+              description: "HR Agents, Talent Acquisition Agents, and Employee Experience Agents work together to optimize workforce management.",
             },
             {
-              title: "Empowered Results for All",
-              description: "Delivering frictionless customer experiences, empowering agents to perform at their best, and driving elevated business outcomes.",
+              title: "Machine Learning Operations",
+              description: "Delivering frictionless machine learning models for use cases, empowering agents to perform at their best, and driving elevated business outcomes.",
             },
           ].map((card, index) => (
             <motion.div

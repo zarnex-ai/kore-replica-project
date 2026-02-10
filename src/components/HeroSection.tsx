@@ -46,7 +46,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 lg:mt-24"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-16 lg:mt-24"
         >
           {[
             {
@@ -59,26 +59,55 @@ export const HeroSection = () => {
               description: "Leverage generative AI innovation to empower customers and create differentiated service experiences.",
               link: "#",
             },
-            {
-              title: "AI for process",
-              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
-              link: "#",
-            },
+            
             {
               title: "ML for service ",
               description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
               link: "#",
             },
             {
-              title: "ML for orchesation ",
+              title: "ML for enterprise ",
               description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
               link: "#",
             },
+            {
+              title: "3D Modelling for enterprise ",
+              description: "Enhance your enterprise solutions with advanced 3D modeling capabilities.",
+              link: "#",
+
+            },
+            {
+              title: "Web Developement as Service",
+              description: "Web development services tailored for your enterprise needs.",
+              link: "#",
+
+            },
+             {
+              title: "App Development ",
+              description: "Flutter Development services for cross-platform mobile applications.",
+              link: "#",
+            },
+             {
+              title: "VFX for enterprise ",
+              description: "VFX services for enhancing visual effects in your enterprise projects.",
+              link: "#",
+            },
+             {
+              title: "Video Editing",
+              description: "Professional video editing services for your enterprise projects.",
+              link: "#",
+            },
+             {
+              title: "Logo Editing",
+              description: "Professional logo editing services for your enterprise projects.",
+              link: "#",
+            },
+            
           ].map((card, index) => (
             <a
               key={card.title}
               href={card.link}
-              className="group card-kore flex flex-col h-full"
+              className="group card-glass flex flex-col h-full"
             >
               <h3 className="heading-card mb-3 group-hover:text-muted-foreground transition-colors">
                 {card.title}

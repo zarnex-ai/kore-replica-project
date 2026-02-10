@@ -5,22 +5,18 @@ const industries = [
   {
     id: "financial",
     label: "Financial Services",
-    logos: ["AAA", "Aegon", "Morgan Stanley", "Deutsche Bank", "MetLife", "Huntington"],
+    logos: [
+      { name: "Primeverse", href: "https://www.primeverse.pro/" },
+      { name: "ScalpTamilan", href: "https://scalptamizhan.in/" }
+    ],
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
-    title: "Banks, Credit Unions, Financial Institutions",
+    title: "Banks, Trading Secrets, Financial Institutions",
     subtitle: "Trusted by banking leaders:",
   },
-  {
-    id: "healthcare",
-    label: "Healthcare",
-    logos: ["Johnson & Johnson", "Pfizer", "Roche", "Florida Blue", "United Health", "Lilly"],
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop",
-    title: "Payers, Providers, Life Sciences",
-    subtitle: "Trusted by healthcare leaders:",
-  },
+
   {
     id: "telecom",
-    label: "Telecom + Media",
+    label: "Healthcare ",
     logos: ["Charter", "AT&T", "Deutsche Telekom", "Frontier", "Thomson Reuters", "eBay"],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
     title: "Telecom, Media, Communications",
@@ -37,7 +33,7 @@ const industries = [
   {
     id: "business",
     label: "Business",
-    logos: ["Tata", "Airbus", "Shell", "Capgemini", "NTT", "Genpact"],
+    logos: ["Dr.MGR College of Engineering"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
     title: "B2B Goods and Services",
     subtitle: "Trusted by business leaders:",
@@ -58,7 +54,7 @@ export const TrustedBySection = () => {
             viewport={{ once: true }}
             className="heading-section mb-4"
           >
-            We've built our business by serving global enterprises
+            We've built services for world class business !
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +63,7 @@ export const TrustedBySection = () => {
             transition={{ delay: 0.1 }}
             className="text-body"
           >
-            Trust us, we've learned from the best.
+            Trust us, Our Developers never disappoint you.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -76,7 +72,7 @@ export const TrustedBySection = () => {
             transition={{ delay: 0.2 }}
             className="text-body mb-8"
           >
-            Discover why hundreds of enterprises use Zarnex.
+            Discover why enterprises enters Zarnex.ai
           </motion.p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a href="#" className="btn-kore-primary">
@@ -121,14 +117,17 @@ export const TrustedBySection = () => {
             <p className="text-small mb-6">{activeIndustry.subtitle}</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {activeIndustry.logos.map((logo) => (
-                <div
-                  key={logo}
-                  className="flex items-center justify-center h-12 bg-muted rounded-lg px-4"
+                <a
+                  key={logo.name}
+                  href={logo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center h-12 bg-muted rounded-lg px-4 hover:bg-muted/80 transition-colors"
                 >
                   <span className="text-sm font-medium text-muted-foreground">
-                    {logo}
+                    {logo.name}
                   </span>
-                </div>
+                </a>
               ))}
             </div>
           </div>

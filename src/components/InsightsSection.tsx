@@ -1,27 +1,34 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { TrendingUp, BarChart3, Users, Target } from "lucide-react";
 
 const insights = [
   {
-    title: "Parallel Agent Processing",
-    date: "January 16, 2026",
-    readTime: "6 Min",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
-    link: "#",
+    title: "AI Adoption Trends",
+    description: "Latest insights on how enterprises are adopting AI technologies and the impact on business outcomes.",
+    icon: TrendingUp,
+    stats: "85% of enterprises",
+    statLabel: "plan to increase AI investment",
   },
   {
-    title: "The Future of Enterprise AI Agents",
-    date: "January 10, 2026",
-    readTime: "8 Min",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=250&fit=crop",
-    link: "#",
+    title: "Agent Performance Analytics",
+    description: "Deep dive into AI agent performance metrics and optimization strategies for enterprise deployments.",
+    icon: BarChart3,
+    stats: "3.2x ROI",
+    statLabel: "average return on AI agents",
   },
   {
-    title: "Building Agentic RAG Solutions",
-    date: "January 5, 2026",
-    readTime: "5 Min",
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=250&fit=crop",
-    link: "#",
+    title: "User Experience Insights",
+    description: "Understanding how AI agents enhance user experiences and drive customer satisfaction.",
+    icon: Users,
+    stats: "94% satisfaction",
+    statLabel: "with AI-powered interactions",
+  },
+  {
+    title: "Future of Enterprise AI",
+    description: "Predictions and strategies for the next generation of AI-powered business transformation.",
+    icon: Target,
+    stats: "2025",
+    statLabel: "AI transformation milestone",
   },
 ];
 
@@ -29,58 +36,59 @@ export const InsightsSection = () => {
   return (
     <section className="section-kore bg-background">
       <div className="container-kore">
-        <div className="flex items-center justify-between mb-12">
+        {/* Section Header */}
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="heading-section"
+            className="heading-section mb-4"
           >
-            AI Insights
+            AI Insights & Analytics
           </motion.h2>
-          <a href="#" className="btn-kore-ghost hidden sm:inline-flex">
-            View all
-            <ArrowRight className="w-4 h-4" />
-          </a>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-body"
+          >
+            Stay ahead with the latest trends, data, and insights in enterprise AI.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Insights Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {insights.map((insight, index) => (
-            <motion.a
+            <motion.div
               key={insight.title}
-              href={insight.link}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group card-kore overflow-hidden p-0"
+              className="card-kore group"
             >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={insight.image}
-                  alt={insight.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                  <span>{insight.date}</span>
-                  <span>•</span>
-                  <span>{insight.readTime}</span>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <insight.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg group-hover:text-muted-foreground transition-colors">
-                  {insight.title}
-                </h3>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold mb-2">{insight.title}</h3>
+                  <p className="text-small text-muted-foreground mb-4">{insight.description}</p>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">{insight.stats}</div>
+                    <div className="text-sm text-muted-foreground">{insight.statLabel}</div>
+                  </div>
+                </div>
               </div>
-            </motion.a>
+              <a
+                href="#"
+                className="mt-4 btn-kore-ghost text-sm inline-flex"
+              >
+                Read More
+              </a>
+            </motion.div>
           ))}
-        </div>
-
-        <div className="text-center mt-8 sm:hidden">
-          <a href="#" className="btn-kore-ghost">
-            View all
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </div>
     </section>

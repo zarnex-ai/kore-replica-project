@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const navItems = [
   { label: "AI Solutions", hasDropdown: true },
   { label: "Agent Platform", hasDropdown: true },
-  { label: "Resources", hasDropdown: true },
+  { label: "Web Solutions", hasDropdown: true },
   { label: "Support", hasDropdown: true },
-  { label: "Company", hasDropdown: true },
 ];
 
 export const ZarnexHeader = () => {
