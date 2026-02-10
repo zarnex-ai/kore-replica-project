@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Youtube, Facebook ,Github} from "lucide-react";
 
 const ZarnexLogo = () => (
   <img
@@ -51,10 +51,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Linkedin, href: "http://linkedin.com/company/zarnexinc", label: "LinkedIn" },
+  { icon: Github, href: "http://github.com/zarnexinc", label: "Github" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
+  // { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
 export const ZarnexFooter = () => {
