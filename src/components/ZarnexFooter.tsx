@@ -29,7 +29,7 @@ const footerLinks = {
     ],
   },
   resources: {
-    title: "Resources",
+    title: "Web Solutions",
     links: [
       { label: "AI Insights", href: "#" },
       { label: "Customer Stories", href: "#" },

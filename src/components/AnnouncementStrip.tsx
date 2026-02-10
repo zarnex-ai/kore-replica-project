@@ -42,7 +42,7 @@ export const AnnouncementStrip = () => {
             {announcements[currentIndex].isImage ? (
               <img
                 src={announcements[currentIndex].logo}
-                alt="Arviona Labs Logo"
+                alt="Arviona Labs Logo "
                 className="h-12 w-15"
               />
             ) : (
