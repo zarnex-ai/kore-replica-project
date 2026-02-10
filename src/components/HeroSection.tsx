@@ -55,7 +55,17 @@ export const HeroSection = () => {
               link: "#",
             },
             {
-              title: "AI for Process",
+              title: "AI for process",
+              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
+              link: "#",
+            },
+            {
+              title: "ML for service ",
+              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
+              link: "#",
+            },
+            {
+              title: "ML for orchesation ",
               description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
               link: "#",
             },
