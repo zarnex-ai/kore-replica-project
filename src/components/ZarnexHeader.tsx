@@ -53,18 +53,7 @@ export const ZarnexHeader = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="#"
-              className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Sign in
-            </a>
-            <a href="#" className="btn-kore-primary">
-              Get in touch
-            </a>
-          </div>
+          
 
           {/* Mobile Menu Button */}
           <button

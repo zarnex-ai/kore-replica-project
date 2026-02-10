@@ -8,7 +8,7 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 210 20% 98%;
+    --background: 300 15% 98%;
     --foreground: 0 0% 9%;
     
     --card: 0 0% 100%;
@@ -21,12 +21,12 @@
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Light gray */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 0 0% 9%;
+    /* Secondary - Light lilac */
+    --secondary: 300 15% 96%;
+    --secondary-foreground: 300 30% 40%;
     
-    --muted: 210 20% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 300 15% 96%;
+    --muted-foreground: 300 30% 40%;
     
     /* Accent - Soft lilac for highlights */
     --accent: 300 20% 95%;
@@ -35,29 +35,29 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
+    --border: 300 15% 90%;
+    --input: 300 15% 90%;
     --ring: 0 0% 9%;
     
     --radius: 0.75rem;
     
     /* Kore.ai specific colors */
     --kore-charcoal: 0 0% 9%;
-    --kore-charcoal-02: 0 0% 35%;
-    --kore-light-bg: 200 33% 97%;
+    --kore-charcoal-02: 300 20% 35%;
+    --kore-light-bg: 300 15% 97%;
     --kore-card-bg: 0 0% 100%;
-    --kore-accent-blue: 189 95% 189%;
-    --kore-gradient-start: 195 80% 95%;
-    --kore-gradient-end: 200 33% 97%;
+    --kore-accent-blue: 300 50% 56%;
+    --kore-gradient-start: 300 20% 95%;
+    --kore-gradient-end: 300 15% 97%;
     
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-background: 300 10% 98%;
+    --sidebar-foreground: 300 30% 30%;
+    --sidebar-primary: 300 40% 15%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
+    --sidebar-accent: 300 15% 95%;
+    --sidebar-accent-foreground: 300 30% 20%;
+    --sidebar-border: 300 15% 91%;
     --sidebar-ring: 300 50% 60%;
   }
 }
