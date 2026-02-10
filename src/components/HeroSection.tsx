@@ -12,7 +12,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="heading-hero text-foreground mb-6"
           >
-          Developers at <span style={{ color: '#C8A2C8' }}>Flows</span>.
+          Developers at <span style={{ color: 'rgb(189, 95, 189)' }}>Flows</span>.
           </motion.h1>
           
           <motion.p
