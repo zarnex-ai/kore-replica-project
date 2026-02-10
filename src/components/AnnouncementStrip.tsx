@@ -8,7 +8,17 @@ const announcements = [
     text: "Zarnex.ai named a leader in the Gartner® Magic Quadrant™ for Conversational AI Platforms, 2025",
     link: "#",
   },
-
+  {
+    logo: "Forrester",
+    text: "Zarnex.ai named a leader in The Forrester Wave™ for Cognitive Search Platforms, 2025",
+    link: "#",
+  },
+  {
+    logo: "Everest",
+    text: "Zarnex.ai named a leader in Everest Group's Conversational AI & AI Agents PEAK Matrix® 2025",
+    link: "#",
+  },
+];
 
 export const AnnouncementStrip = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
