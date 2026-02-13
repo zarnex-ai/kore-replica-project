@@ -80,7 +80,27 @@ export const EcosystemSection = () => {
               transition={{ delay: index * 0.1 }}
               className="card-kore text-center"
             >
-              <div className="w-full h-40 bg-gradient-to-br from-muted to-background rounded-xl mb-4" />
+              {card.title === "Customer Care Automation" && (
+                <img 
+                  src="/custcare.png" 
+                  alt="Customer Care Automation" 
+                  className="w-full h-55 object-cover rounded-xl mb-4"
+                />
+              )}
+              {card.title === "AI Workforce Management" && (
+                <img 
+                  src="/aiworkforce.png" 
+                  alt="AI Workforce Management" 
+                  className="w-full h-55 object-cover rounded-xl mb-4"
+                />
+              )}
+              {card.title === "Machine Learning Operations" && (
+                <img 
+                  src="/mlops.png" 
+                  alt="Machine Learning Operations" 
+                  className="w-full h-55 object-cover rounded-xl mb-4"
+                />
+              )}
               <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
               <p className="text-small">{card.description}</p>
             </motion.div>

@@ -4,8 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import TrustedBySection from "@/components/TrustedBySection";
 import EcosystemSection from "@/components/EcosystemSection";
 import DifferentiatorsSection from "@/components/DifferentiatorsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import PartnersSection from "@/components/PartnersSection";
 import ZarnexFooter from "@/components/ZarnexFooter";
 
 const Index = () => {
@@ -18,8 +16,6 @@ const Index = () => {
         <TrustedBySection />
         <EcosystemSection />
         <DifferentiatorsSection />
-        <TestimonialsSection />
-        <PartnersSection />
       </main>
       <ZarnexFooter />
     </div>

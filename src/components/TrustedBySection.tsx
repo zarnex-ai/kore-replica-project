@@ -14,29 +14,36 @@ const industries = [
   },
 
   {
-    id: "telecom",
+    id: "Healthcare",
     label: "Healthcare ",
-    logos: ["Charter", "AT&T", "Deutsche Telekom", "Frontier", "Thomson Reuters", "eBay"],
+    logos: [
+      { name: "Doc Nova" },
+    ],
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-    title: "Telecom, Media, Communications",
-    subtitle: "Trusted by telecom leaders:",
-  },
-  {
-    id: "consumer",
-    label: "Consumer",
-    logos: ["Colgate", "Coca-Cola", "LG", "Columbia", "Alaska Airlines", "Bosch"],
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
-    title: "Consumer Goods and Services",
-    subtitle: "Trusted by consumer leaders:",
+    title: "Healthcare Software Services",
+    subtitle: "Trusted by Medical Organisation"
   },
   {
     id: "business",
     label: "Business",
-    logos: ["Dr.MGR College of Engineering"],
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
+    logos: [
+      { name: "Arviona Labs", href: "https://arvionalabs.com/" },
+    ],
+    image: "/Arvional.png",
     title: "B2B Goods and Services",
     subtitle: "Trusted by business leaders:",
   },
+  {
+  id: "Final year project",
+  label: "Final year project",
+  logos: [
+    { name: "Dr. M.G.R. Government Arts and Science College for Women" },
+  ],
+  image: "/project.png",
+  title: "End to End projects",
+  subtitle: "zarnex.ai does all types of Final year projects",
+},
+
 ];
 
 export const TrustedBySection = () => {
