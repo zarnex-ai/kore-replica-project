@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-
 const industries = [
   {
     id: "financial",
@@ -9,7 +8,7 @@ const industries = [
       { name: "Primeverse", href: "https://www.primeverse.pro/" },
       { name: "ScalpTamilan", href: "https://scalptamizhan.in/" }
     ],
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
+    image: "D:/zar-port/kore-replica-project/public/images/trading.jpg",
     title: "Banks, Trading Secrets, Financial Institutions",
     subtitle: "Trusted by banking leaders:",
   },

@@ -102,7 +102,16 @@ export const HeroSection = () => {
               description: "Professional logo editing services for your enterprise projects.",
               link: "#",
             },
-            
+             {
+              title: "Cloud Infrastructure",
+              description: "Comprehensive cloud computing solutions for your enterprise.",
+              link: "#",
+            },
+            {
+              title: "SEO Optimization by AI ",
+              description: "Optimize your website's SEO with AI-powered solutions.",
+              link: "#",
+            }
           ].map((card, index) => (
             <a
               key={card.title}
