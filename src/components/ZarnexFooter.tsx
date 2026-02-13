@@ -69,6 +69,10 @@ export const ZarnexFooter = () => {
             <p className="text-sm text-primary-foreground/70 mb-6 max-w-xs">
               Reimagine the enterprise with AI. The world's leading enterprises trust Zarnex.ai.
             </p>
+            
+            <div className="text-sm text-primary-foreground/70 mb-6">
+              <span className="font-semibold">Reachout:</span> zarnexsolutions@gmail.com
+            </div>
 
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
