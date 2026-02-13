@@ -8,7 +8,7 @@ const industries = [
       { name: "Primeverse", href: "https://www.primeverse.pro/" },
       { name: "ScalpTamilan", href: "https://scalptamizhan.in/" }
     ],
-    image: "D:/zar-port/kore-replica-project/public/images/trading.jpg",
+    image: "/images/trading.jpg",
     title: "Banks, Trading Secrets, Financial Institutions",
     subtitle: "Trusted by banking leaders:",
   },
@@ -19,7 +19,7 @@ const industries = [
     logos: [
       { name: "Doc Nova" },
     ],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+    image: "/health.png",
     title: "Healthcare Software Services",
     subtitle: "Trusted by Medical Organisation"
   },
