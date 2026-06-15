@@ -42,7 +42,7 @@ const platformFeatures = [
 
 export const EcosystemSection = () => {
   return (
-    <section className="section-kore section-kore-light">
+    <section id="ecosystem" className="section-kore section-kore-light">
       <div className="container-kore">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -127,43 +127,61 @@ export const EcosystemSection = () => {
             Create valuable AI agents and agentic workflows with confidence and ongoing control.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {platformFeatures.map((feature, index) => (
+          <motion.div
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.05
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {platformFeatures.map((feature) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="card-kore group"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
+                }}
+                whileHover={{ scale: 1.02, y: -4, boxShadow: "0 10px 25px rgba(189, 95, 189, 0.08)" }}
+                className="card-kore group flex flex-col justify-between h-full"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-muted">
-                    <feature.icon className="w-5 h-5 text-foreground" />
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 rounded-lg bg-muted">
+                      <feature.icon className="w-5 h-5 text-foreground" />
+                    </div>
+                    <h4 className="font-semibold">{feature.title}</h4>
                   </div>
-                  <h4 className="font-semibold">{feature.title}</h4>
+                  <p className="text-small mb-4">{feature.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {feature.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs bg-muted rounded-full text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-small mb-4">{feature.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {feature.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-1 text-xs bg-muted rounded-full text-muted-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="mt-4 pt-2">
+                  <a
+                    href="#"
+                    className="btn-kore-ghost text-sm inline-flex"
+                  >
+                    Learn more
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
-                <a
-                  href="#"
-                  className="mt-4 btn-kore-ghost text-sm inline-flex"
-                >
-                  Learn more
-                  <ArrowRight className="w-4 h-4" />
-                </a>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

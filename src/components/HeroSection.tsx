@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export const HeroSection = () => {
+export const HeroSection = ({ onOpenDemo }: { onOpenDemo?: () => void }) => {
   return (
-    <section className="section-kore pt-12 lg:pt-20 relative" style={{ backgroundColor: '#fcfaff' }}>
+    <section id="services" className="section-kore pt-12 lg:pt-20 relative" style={{ backgroundColor: '#fcfaff' }}>
       <div className="liquid-background">
         <div className="blob blob-1"></div>
         <div className="blob blob-2"></div>
@@ -35,98 +35,100 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="#" className="btn-kore-primary text-base px-8 py-4">
+            <button
+              onClick={() => onOpenDemo?.()}
+              className="btn-kore-primary text-base px-8 py-4"
+            >
               Request Demo
-            </a>
+            </button>
           </motion.div>
         </div>
 
         {/* AI Solutions Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.04
+              }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-16 lg:mt-24"
         >
           {[
             {
               title: "AI for Work",
               description: "Search across silos, automate workflows, orchestrate AI agents and govern with confidence enterprise-wide.",
-              link: "#",
             },
             {
               title: "AI for Service",
               description: "Leverage generative AI innovation to empower customers and create differentiated service experiences.",
-              link: "#",
             },
-            
             {
-              title: "ML for service ",
+              title: "ML for service",
               description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
-              link: "#",
             },
             {
-              title: "ML for enterprise ",
+              title: "ML for enterprise",
               description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
-              link: "#",
             },
             {
-              title: "3D Modelling for enterprise ",
+              title: "3D Modelling for enterprise",
               description: "Enhance your enterprise solutions with advanced 3D modeling capabilities.",
-              link: "#",
-
             },
             {
               title: "Web Developement as Service",
               description: "Web development services tailored for your enterprise needs.",
-              link: "#",
-
-            },
-             {
-              title: "App Development ",
-              description: "Flutter Development services for cross-platform mobile applications.",
-              link: "#",
-            },
-             {
-              title: "VFX for enterprise ",
-              description: "VFX services for enhancing visual effects in your enterprise projects.",
-              link: "#",
-            },
-             {
-              title: "Video Editing",
-              description: "Professional video editing services for your enterprise projects.",
-              link: "#",
-            },
-             {
-              title: "Logo Editing",
-              description: "Professional logo editing services for your enterprise projects.",
-              link: "#",
-            },
-             {
-              title: "Cloud Infrastructure",
-              description: "Comprehensive cloud computing solutions for your enterprise.",
-              link: "#",
             },
             {
-              title: "SEO Optimization by AI ",
+              title: "App Development",
+              description: "Flutter Development services for cross-platform mobile applications.",
+            },
+            {
+              title: "VFX for enterprise",
+              description: "VFX services for enhancing visual effects in your enterprise projects.",
+            },
+            {
+              title: "Video Editing",
+              description: "Professional video editing services for your enterprise projects.",
+            },
+            {
+              title: "Logo Editing",
+              description: "Professional logo editing services for your enterprise projects.",
+            },
+            {
+              title: "Cloud Infrastructure",
+              description: "Comprehensive cloud computing solutions for your enterprise.",
+            },
+            {
+              title: "SEO Optimization by AI",
               description: "Optimize your website's SEO with AI-powered solutions.",
-              link: "#",
             }
-          ].map((card, index) => (
-            <a
+          ].map((card) => (
+            <motion.button
               key={card.title}
-              href={card.link}
-              className="group card-glass flex flex-col h-full"
+              onClick={() => onOpenDemo?.()}
+              variants={{
+                hidden: { opacity: 0, y: 25 },
+                show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
+              }}
+              whileHover={{ scale: 1.03, y: -6, boxShadow: "0 12px 30px rgba(189, 95, 189, 0.15)" }}
+              whileTap={{ scale: 0.98 }}
+              className="group card-glass flex flex-col h-full text-left w-full outline-none"
             >
-              <h3 className="heading-card mb-3 group-hover:text-muted-foreground transition-colors">
+              <h3 className="heading-card mb-3 group-hover:text-purple-300 transition-colors">
                 {card.title}
               </h3>
               <p className="text-small flex-1">{card.description}</p>
               <div className="mt-4 flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-3 transition-all">
                 Learn more
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-purple-300" />
               </div>
-            </a>
+            </motion.button>
           ))}
         </motion.div>
       </div>

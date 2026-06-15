@@ -12,40 +12,39 @@ const footerLinks = {
   solutions: {
     title: "AI Solutions",
     links: [
-      { label: "AI for Work", href: "#" },
-      { label: "AI for Service", href: "#" },
-      { label: "AI for Process", href: "#" },
-      { label: "Industries", href: "#" },
+      { label: "AI for Work", href: "#services" },
+      { label: "AI for Service", href: "#services" },
+      { label: "AI for Process", href: "#services" },
+      { label: "Industries", href: "#discover" },
     ],
   },
   platform: {
     title: "Agent Platform",
     links: [
-      { label: "Platform Overview", href: "#" },
-      { label: "Multi-Agent Orchestration", href: "#" },
-      { label: "Search + Data AI", href: "#" },
-      { label: "Integrations", href: "#" },
-      { label: "Security & Governance", href: "#" },
+      { label: "Platform Overview", href: "#ecosystem" },
+      { label: "Multi-Agent Orchestration", href: "#ecosystem" },
+      { label: "Search + Data AI", href: "#ecosystem" },
+      { label: "Integrations", href: "#ecosystem" },
+      { label: "Security & Governance", href: "#ecosystem" },
     ],
   },
   resources: {
     title: "Web Solutions",
     links: [
-      { label: "AI Insights", href: "#" },
-      { label: "Customer Stories", href: "#" },
-      { label: "Documentation", href: "#" },
-      { label: "Whitepapers", href: "#" },
-      { label: "Webinars", href: "#" },
+      { label: "Web Development", href: "#services" },
+      { label: "App Development", href: "#services" },
+      { label: "VFX & 3D Modeling", href: "#services" },
+      { label: "Video & Logo Editing", href: "#services" },
     ],
   },
   company: {
     title: "Company",
     links: [
-      { label: "About Us", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "News", href: "#" },
-      { label: "Partners", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "About Us", href: "#services" },
+      { label: "Careers", href: "#services" },
+      { label: "News", href: "#services" },
+      { label: "Partners", href: "#discover" },
+      { label: "Contact", href: "#contact" },
     ],
   },
 };
@@ -53,13 +52,22 @@ const footerLinks = {
 const socialLinks = [
   { icon: Linkedin, href: "http://linkedin.com/company/zarnexinc", label: "LinkedIn" },
   { icon: Github, href: "http://github.com/zarnexinc", label: "Github" },
-  // { icon: Youtube, href: "#", label: "YouTube" },
-  // { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
 export const ZarnexFooter = () => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const id = href.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer id="contact" className="bg-foreground text-primary-foreground">
       <div className="container-kore py-16 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
@@ -95,7 +103,8 @@ export const ZarnexFooter = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-primary-foreground/70 hover:text-primary-foreground"
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                     >
                       {link.label}
                     </a>
