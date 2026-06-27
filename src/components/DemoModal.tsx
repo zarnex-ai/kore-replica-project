@@ -133,12 +133,12 @@ export const DemoModal = ({ isOpen, onClose }: DemoModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && resetForm()}>
-      <DialogContent className="max-w-lg w-[95vw] bg-white/95 backdrop-blur-md border border-border/60 shadow-2xl rounded-2xl p-6 sm:p-8 overflow-hidden z-[100]">
+      <DialogContent className="max-w-lg w-[95vw] backdrop-blur-xl border shadow-2xl rounded-2xl p-6 sm:p-8 overflow-hidden z-[100]" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #050a14 100%)', borderColor: 'var(--zarnex-border)' }}>
         
         {step < 4 && (
           <DialogHeader className="mb-6">
             <DialogTitle className="text-2xl font-bold flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-purple-600 animate-pulse" />
+              <Sparkles className="w-5 h-5 animate-pulse" style={{ color: 'var(--zarnex-cyan)' }} />
               Interactive Project Scoping
             </DialogTitle>
             <DialogDescription className="text-muted-foreground text-sm">
@@ -161,13 +161,17 @@ export const DemoModal = ({ isOpen, onClose }: DemoModalProps) => {
                   onClick={() => setFormData({ ...formData, domain: d.id, complexityFeatures: [] })}
                   className={`text-left p-4 rounded-xl border transition-all duration-300 ${
                     formData.domain === d.id
-                      ? "border-purple-600 bg-purple-50/50 shadow-md translate-x-1"
-                      : "border-border/60 hover:bg-muted hover:border-border"
+                      ? "shadow-md translate-x-1"
+                      : "hover:bg-white/5"
                   }`}
+                  style={{
+                    borderColor: formData.domain === d.id ? 'var(--zarnex-cyan)' : 'var(--zarnex-border)',
+                    background: formData.domain === d.id ? 'rgba(0, 200, 255, 0.05)' : 'transparent',
+                  }}
                 >
                   <div className="font-semibold text-foreground text-sm sm:text-base flex items-center justify-between">
                     {d.label}
-                    {formData.domain === d.id && <CheckCircle2 className="w-4 h-4 text-purple-600" />}
+                    {formData.domain === d.id && <CheckCircle2 className="w-4 h-4" style={{ color: 'var(--zarnex-cyan)' }} />}
                   </div>
                   <div className="text-xs sm:text-sm text-muted-foreground mt-1">{d.desc}</div>
                 </button>
@@ -191,9 +195,14 @@ export const DemoModal = ({ isOpen, onClose }: DemoModalProps) => {
                     onClick={() => setFormData({ ...formData, timeline: time })}
                     className={`p-3 rounded-lg border text-xs font-semibold text-center transition-all ${
                       formData.timeline === time
-                        ? "border-purple-600 bg-purple-50/30 text-purple-700 shadow-sm"
-                        : "border-border/60 text-muted-foreground hover:bg-muted"
+                        ? "shadow-sm"
+                        : "hover:bg-white/5"
                     }`}
+                    style={{
+                      borderColor: formData.timeline === time ? 'var(--zarnex-cyan)' : 'var(--zarnex-border)',
+                      background: formData.timeline === time ? 'rgba(0, 200, 255, 0.05)' : 'transparent',
+                      color: formData.timeline === time ? 'var(--zarnex-cyan)' : undefined,
+                    }}
                   >
                     {time.split(" ")[0]}
                     <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">

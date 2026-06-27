@@ -1,137 +1,164 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { ArrowRight, Play } from "lucide-react";
+import ModelViewer from "./ModelViewer";
+import GlobeRings from "./GlobeRings";
 
 export const HeroSection = ({ onOpenDemo }: { onOpenDemo?: () => void }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const { scrollY } = useScroll();
+  const smoothScrollY = useSpring(scrollY, { stiffness: 100, damping: 25 });
+
+  // Scroll animations: as user scrolls down, slide left to center, scale down slightly to avoid cropping
+  const x = useTransform(smoothScrollY, [0, 480], [0, isDesktop ? -270 : 0]);
+  const scale = useTransform(smoothScrollY, [0, 480], [1.0, 0.90]);
+  const opacity = useTransform(smoothScrollY, [420, 680], [1.0, 0.7]);
+
   return (
-    <section id="services" className="section-kore pt-12 lg:pt-20 relative" style={{ backgroundColor: '#fcfaff' }}>
-      <div className="liquid-background">
-        <div className="blob blob-1"></div>
-        <div className="blob blob-2"></div>
-        <div className="blob blob-3"></div>
-      </div>
-      <div className="container-kore">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="heading-hero text-foreground mb-6"
-          >
-          Developers at <span style={{ color: 'rgb(189, 95, 189)' }}>Flows</span>.
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-body max-w-2xl mx-auto mb-10"
-          >
-            AI agents for work, service, and process. Build once, deploy everywhere.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <button
-              onClick={() => onOpenDemo?.()}
-              className="btn-kore-primary text-base px-8 py-4"
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ background: '#000000' }}
+    >
+      {/* Background Effects */}
+      <div className="hero-grid-overlay" />
+      <div className="hero-glow hero-glow-1" />
+      <div className="hero-glow hero-glow-2" />
+
+      {/* Floating particles */}
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div
+          key={i}
+          className="particle"
+          style={{
+            left: `${Math.random() * 100}%`,
+            bottom: '-10px',
+            animationDuration: `${8 + Math.random() * 12}s`,
+            animationDelay: `${Math.random() * 8}s`,
+            width: `${1 + Math.random() * 2}px`,
+            height: `${1 + Math.random() * 2}px`,
+            opacity: 0.3 + Math.random() * 0.5,
+          }}
+        />
+      ))}
+
+      <div className="container-zarnex relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center pt-20 lg:pt-0">
+
+          {/* Left Column - Text Content */}
+          <div className="order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--zarnex-cyan-dim)] bg-[rgba(0,200,255,0.05)] mb-6"
             >
-              Request Demo
-            </button>
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--zarnex-cyan)] animate-pulse" />
+              <span className="text-xs tracking-[0.15em] uppercase font-medium" style={{ color: 'var(--zarnex-cyan)' }}>
+                AI-POWERED SYSTEMS
+              </span>
+              <span className="text-[10px] text-white/30">✦—✦</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl leading-[1.05] tracking-tight text-white mb-6"
+            >
+              INTELLIGENCE{' '}
+              <br />
+              BEYOND{' '}
+              <span className="text-glow" style={{ color: 'var(--zarnex-cyan)' }}>
+                LIMITS
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-display text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white/40 mb-4"
+            >
+              BUILDING NEXT-GEN AI SOLUTIONS FOR A LIMITLESS FUTURE.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-base md:text-lg text-white/50 max-w-lg mb-10 leading-relaxed"
+            >
+              We build intelligent systems that automate, optimize,
+              and accelerate the future of industries.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              <button
+                onClick={() => onOpenDemo?.()}
+                className="btn-primary"
+              >
+                EXPLORE SOLUTIONS
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <button
+                className="btn-outline"
+              >
+                WATCH INTRO
+                <Play className="w-4 h-4" />
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Right Column - 3D Model with Globe Rings and Parallax Scroll */}
+          <motion.div
+            style={{ x, scale, opacity }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="order-1 lg:order-2 flex items-center justify-center relative z-20"
+          >
+            <div className="model-frame relative">
+              {/* Outer ambient glow */}
+              <div
+                className="absolute inset-[-40px] rounded-full pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle, rgba(0,200,255,0.08) 0%, rgba(0,100,200,0.03) 40%, transparent 70%)',
+                }}
+              />
+
+              {/* Globe wireframe rings overlay */}
+              <GlobeRings />
+
+              {/* 3D Model */}
+              <div className="w-full h-full relative z-[5]">
+                <ModelViewer modelPath="/zarnexfin3d.glb" />
+              </div>
+            </div>
           </motion.div>
         </div>
-
-        {/* AI Solutions Cards */}
-        <motion.div
-          variants={{
-            hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.04
-              }
-            }
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-16 lg:mt-24"
-        >
-          {[
-            {
-              title: "AI for Work",
-              description: "Search across silos, automate workflows, orchestrate AI agents and govern with confidence enterprise-wide.",
-            },
-            {
-              title: "AI for Service",
-              description: "Leverage generative AI innovation to empower customers and create differentiated service experiences.",
-            },
-            {
-              title: "ML for service",
-              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
-            },
-            {
-              title: "ML for enterprise",
-              description: "Streamline knowledge-intensive business processes with autonomous AI agents and agentic workflows.",
-            },
-            {
-              title: "3D Modelling for enterprise",
-              description: "Enhance your enterprise solutions with advanced 3D modeling capabilities.",
-            },
-            {
-              title: "Web Developement as Service",
-              description: "Web development services tailored for your enterprise needs.",
-            },
-            {
-              title: "App Development",
-              description: "Flutter Development services for cross-platform mobile applications.",
-            },
-            {
-              title: "VFX for enterprise",
-              description: "VFX services for enhancing visual effects in your enterprise projects.",
-            },
-            {
-              title: "Video Editing",
-              description: "Professional video editing services for your enterprise projects.",
-            },
-            {
-              title: "Logo Editing",
-              description: "Professional logo editing services for your enterprise projects.",
-            },
-            {
-              title: "Cloud Infrastructure",
-              description: "Comprehensive cloud computing solutions for your enterprise.",
-            },
-            {
-              title: "SEO Optimization by AI",
-              description: "Optimize your website's SEO with AI-powered solutions.",
-            }
-          ].map((card) => (
-            <motion.button
-              key={card.title}
-              onClick={() => onOpenDemo?.()}
-              variants={{
-                hidden: { opacity: 0, y: 25 },
-                show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
-              }}
-              whileHover={{ scale: 1.03, y: -6, boxShadow: "0 12px 30px rgba(189, 95, 189, 0.15)" }}
-              whileTap={{ scale: 0.98 }}
-              className="group card-glass flex flex-col h-full text-left w-full outline-none"
-            >
-              <h3 className="heading-card mb-3 group-hover:text-purple-300 transition-colors">
-                {card.title}
-              </h3>
-              <p className="text-small flex-1">{card.description}</p>
-              <div className="mt-4 flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-3 transition-all">
-                Learn more
-                <ArrowRight className="w-4 h-4 text-purple-300" />
-              </div>
-            </motion.button>
-          ))}
-        </motion.div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32"
+        style={{ background: 'linear-gradient(to top, #000000, transparent)' }}
+      />
     </section>
   );
 };

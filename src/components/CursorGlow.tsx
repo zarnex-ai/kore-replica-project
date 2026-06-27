@@ -7,7 +7,6 @@ export const CursorGlow = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if mobile device or touch screen
     const checkDevice = () => {
       setIsMobile(
         window.matchMedia('(max-width: 768px)').matches ||
@@ -31,8 +30,7 @@ export const CursorGlow = () => {
           target.tagName === 'BUTTON' ||
           target.closest('a') ||
           target.closest('button') ||
-          target.closest('.card-glass') ||
-          target.closest('.card-kore') ||
+          target.closest('.card-dark') ||
           target.closest('[role="button"]') ||
           target.classList.contains('cursor-pointer'))
       ) {
@@ -62,35 +60,40 @@ export const CursorGlow = () => {
 
   return (
     <>
-      {/* Outer Glow Ring */}
-      <div
-        className="cursor-glow"
-        style={{
-          left: position.x,
-          top: position.y,
-          width: isHovered ? '80px' : '44px',
-          height: isHovered ? '80px' : '44px',
-          backgroundColor: isHovered ? 'rgba(189, 95, 189, 0.25)' : 'rgba(189, 95, 189, 0.1)',
-          border: isHovered ? '2px solid rgba(189, 95, 189, 0.7)' : '1px solid rgba(189, 95, 189, 0.3)',
-          transition: 'width 0.2s cubic-bezier(0.25, 1, 0.5, 1), height 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease, border-color 0.2s ease',
-        }}
-      />
-      {/* Inner precise dot */}
+      {/* Outer Inverted Ring */}
       <div
         style={{
           position: 'fixed',
           left: position.x,
           top: position.y,
-          width: isHovered ? '8px' : '6px',
-          height: isHovered ? '8px' : '6px',
-          backgroundColor: 'rgb(189, 95, 189)',
+          width: isHovered ? '100px' : '60px',
+          height: isHovered ? '100px' : '60px',
+          border: '1.8px solid #ffffff',
           borderRadius: '50%',
           pointerEvents: 'none',
           zIndex: 9999,
           transform: 'translate(-50%, -50%)',
+          mixBlendMode: 'difference',
+          transition: 'width 0.25s cubic-bezier(0.25, 1, 0.5, 1), height 0.25s cubic-bezier(0.25, 1, 0.5, 1)',
+        }}
+      />
+      {/* Inner Inverted Precision Dot */}
+      <div
+        style={{
+          position: 'fixed',
+          left: position.x,
+          top: position.y,
+          width: isHovered ? '18px' : '11px',
+          height: isHovered ? '18px' : '11px',
+          backgroundColor: '#ffffff',
+          borderRadius: '50%',
+          pointerEvents: 'none',
+          zIndex: 9999,
+          transform: 'translate(-50%, -50%)',
+          mixBlendMode: 'difference',
           transition: 'width 0.15s ease-out, height 0.15s ease-out',
         }}
       />
     </>
   );
-};
+};

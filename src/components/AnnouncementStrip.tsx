@@ -3,15 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const announcements = [
-  
   {
-    logo: "DR.MGR College of Engineering",
+    logo: "DR.MGR College",
     text: "Zarnex.ai named a leader in College Final Year Projects ™ for Cognitive Search Platforms, 2025",
     link: "#",
   },
   {
-    logo: "/arviona-labs-logo.png", // Logo image with background removed
-    text: "Zarnex.ai named a Technical Partners  in Arviona Labs's Personalized Academic ML Models & AI Agents Zarnex.ai® 2026",
+    logo: "/arviona-labs-logo.png",
+    text: "Zarnex.ai named Technical Partners in Arviona Labs's Personalized Academic ML Models & AI Agents 2026",
     link: "https://arvionalabs.com",
     isImage: true,
   },
@@ -28,8 +27,14 @@ export const AnnouncementStrip = () => {
   }, []);
 
   return (
-    <div className="bg-kore-light-bg border-b border-border/50 py-3 mt-16 lg:mt-20">
-      <div className="container-kore">
+    <div
+      className="py-3 fixed top-16 lg:top-20 left-0 right-0 z-40"
+      style={{
+        background: 'linear-gradient(90deg, rgba(0, 200, 255, 0.05), rgba(0, 100, 200, 0.08), rgba(0, 200, 255, 0.05))',
+        borderBottom: '1px solid var(--zarnex-border)',
+      }}
+    >
+      <div className="container-zarnex">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -42,23 +47,27 @@ export const AnnouncementStrip = () => {
             {announcements[currentIndex].isImage ? (
               <img
                 src={announcements[currentIndex].logo}
-                alt="Arviona Labs Logo "
-                className="h-12 w-15"
+                alt="Partner Logo"
+                className="h-8 w-auto opacity-70"
               />
             ) : (
-              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span
+                className="text-[10px] font-semibold uppercase tracking-[0.15em]"
+                style={{ color: 'var(--zarnex-cyan)' }}
+              >
                 {announcements[currentIndex].logo}
               </span>
             )}
-            <span className="text-sm text-foreground max-w-xl text-center">
+            <span className="text-xs text-white/50 max-w-xl text-center">
               {announcements[currentIndex].text}
             </span>
             <a
               href={announcements[currentIndex].link}
-              className="btn-kore-ghost text-sm"
+              className="inline-flex items-center gap-1 text-xs font-semibold transition-all hover:gap-2"
+              style={{ color: 'var(--zarnex-cyan)' }}
             >
               Access Report
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3 h-3" />
             </a>
           </motion.div>
         </AnimatePresence>
