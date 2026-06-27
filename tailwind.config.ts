@@ -16,6 +16,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["'Space Grotesk'", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
+        telegraf: ["'Telegraf'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

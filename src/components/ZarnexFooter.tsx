@@ -105,12 +105,12 @@ export const ZarnexFooter = () => {
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <a href="/" className="inline-flex items-center gap-2 mb-6">
               <img
-                src="/zarnex.ai-logo.png"
+                src="/zarnex-logo.png"
                 alt="Zarnex.ai"
                 className="h-8 w-auto"
               />
-              <span className="font-display font-bold text-sm tracking-wider text-white">
-                ZARNEX.AI
+              <span className="font-display font-bold text-base lg:text-lg tracking-wider text-white hidden sm:block">
+                Zarnex.ai
               </span>
             </a>
             <p className="text-sm text-white/40 mb-6 max-w-xs leading-relaxed">
@@ -177,7 +177,7 @@ export const ZarnexFooter = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-white/25 tracking-wide">
-              © {new Date().getFullYear()} Zarnex.AI, Inc. All rights reserved.
+              © {new Date().getFullYear()} Zarnex.ai, Inc. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-xs text-white/25 hover:text-white/50 transition-colors">

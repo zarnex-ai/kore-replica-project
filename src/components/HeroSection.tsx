@@ -76,11 +76,11 @@ export const HeroSection = ({ onOpenDemo }: { onOpenDemo?: () => void }) => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl leading-[1.05] tracking-tight text-white mb-6"
             >
-              INTELLIGENCE{' '}
+              Developers{' '}
               <br />
-              BEYOND{' '}
+              at{' '}
               <span className="text-glow" style={{ color: 'var(--zarnex-cyan)' }}>
-                LIMITS
+                FLOWS.
               </span>
             </motion.h1>
 
@@ -90,7 +90,7 @@ export const HeroSection = ({ onOpenDemo }: { onOpenDemo?: () => void }) => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-display text-[10px] sm:text-xs tracking-[0.25em] uppercase text-white/40 mb-4"
             >
-              BUILDING NEXT-GEN AI SOLUTIONS FOR A LIMITLESS FUTURE.
+              Automating Business with AI & SaaS Solutions
             </motion.p>
 
             <motion.p

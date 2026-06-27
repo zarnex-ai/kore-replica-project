@@ -25,9 +25,9 @@ const features = [
 ];
 
 const stats = [
-  { value: "50+", label: "COUNTRIES" },
-  { value: "200+", label: "ENTERPRISES" },
-  { value: "1M+", label: "USERS" },
+  { value: "5+", label: "STATES(IND)" },
+  { value: "20+", label: "CLIENTS" },
+  { value: "5k+", label: "USERS" },
 ];
 
 export const WhyChooseSection = () => {

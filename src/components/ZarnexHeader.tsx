@@ -55,7 +55,7 @@ export const ZarnexHeader = ({ onOpenDemo }: { onOpenDemo?: () => void }) => {
               className="h-8 lg:h-9 w-auto object-contain"
             />
             <span className="font-display font-bold text-base lg:text-lg tracking-wider text-white hidden sm:block">
-              ZARNEX.AI
+              Zarnex.ai
             </span>
           </a>
 
