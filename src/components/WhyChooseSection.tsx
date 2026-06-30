@@ -25,9 +25,9 @@ const features = [
 ];
 
 const stats = [
-  { value: "5+", label: "STATES(IND)" },
-  { value: "20+", label: "CLIENTS" },
-  { value: "5k+", label: "USERS" },
+  { value: "50+", label: "STATES(IND)" },
+  { value: "200+", label: "CLIENTS" },
+  { value: "1M+", label: "USERS" },
 ];
 
 export const WhyChooseSection = () => {
@@ -96,29 +96,15 @@ export const WhyChooseSection = () => {
             </h3>
 
             {/* World map dots visualization */}
-            <div className="relative h-40 mb-8 z-10">
-              <svg viewBox="0 0 400 180" className="w-full h-full opacity-30">
-                {/* Simplified world map dots */}
-                {Array.from({ length: 80 }).map((_, i) => {
-                  const x = 30 + (i % 20) * 18 + (Math.random() - 0.5) * 8;
-                  const y = 20 + Math.floor(i / 20) * 40 + (Math.random() - 0.5) * 15;
-                  const isHighlight = i % 7 === 0;
-                  return (
-                    <circle
-                      key={i}
-                      cx={x}
-                      cy={y}
-                      r={isHighlight ? 2.5 : 1.2}
-                      fill={isHighlight ? 'var(--zarnex-cyan)' : 'rgba(0, 200, 255, 0.25)'}
-                      opacity={isHighlight ? 0.9 : 0.5}
-                    />
-                  );
-                })}
-                {/* Connection lines */}
-                <line x1="70" y1="50" x2="200" y2="80" stroke="rgba(0, 200, 255, 0.15)" strokeWidth="0.5" />
-                <line x1="200" y1="80" x2="320" y2="40" stroke="rgba(0, 200, 255, 0.15)" strokeWidth="0.5" />
-                <line x1="150" y1="100" x2="280" y2="120" stroke="rgba(0, 200, 255, 0.1)" strokeWidth="0.5" />
-              </svg>
+            <div className="relative h-40 mb-8 z-10 flex items-center justify-center overflow-hidden rounded-xl border border-white/5 bg-white/[0.01] backdrop-blur-sm">
+              <img
+                src="/world_map_dots.svg"
+                alt="World Map"
+                className="w-full h-full object-contain opacity-50 select-none pointer-events-none"
+                style={{
+                  filter: 'drop-shadow(0 0 12px rgba(0, 200, 255, 0.35)) brightness(1.3)'
+                }}
+              />
             </div>
 
             {/* Stats Row */}
